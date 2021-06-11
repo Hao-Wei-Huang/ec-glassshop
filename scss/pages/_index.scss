@@ -1,0 +1,268 @@
+.banner{
+	height: 840px;
+	background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner.png');
+	@include bg-cover;
+}
+@include pad{
+	.banner{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/banner-sm.png');
+	}
+}
+@include phone{
+	.banner{
+		height: 394px;
+	}
+}
+
+.intro-content{
+	padding: 0px 24px;
+	li{
+		width: 20%;
+		.icon-wrap{
+			width: 100px;
+			height: 100px;
+			margin: 0px auto;
+		}
+		box-sizing: border-box;
+	}
+}
+
+@include pad{
+	.intro-content{
+		flex-wrap: wrap;
+		padding: 0px;
+		li{
+			width: 45%;
+		}
+	}
+}
+
+@include phone{
+	.intro-content li{
+			width: 100%;
+	}
+}
+.products ul li{
+	img{
+		width: 57%;
+	}
+	a{
+		display: flex;
+		align-items: center;
+		padding: 0 30px;
+		color: $color-primary;
+		font-weight: 900;
+		font-style: italic;
+		&:hover{
+			color: $color-secondary;
+		}
+	}
+	.icon-diamond{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-diamond.svg');
+	}
+	.icon-sun{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-sun.svg');
+	}
+	.icon-thunder{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-thunder.svg');
+	}
+	.products-icon{
+		width: 48px;
+		height: 48px;
+		margin-right: 8px;
+		@include bg-contain;
+	}
+}
+@include pad{
+	.products ul li{
+		a{
+			width: 43%;
+			font-size: 28px;
+			.products-icon{
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+}
+@include phone{
+	.products ul li{
+		position: relative;
+		img{
+			width: 100%;
+		}
+		a{
+			justify-content: center;
+			color: $color-lighter;
+			padding: 0px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			&:hover{
+				color: $color-primary;
+			}
+		}
+		.icon-diamond{
+			background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-diamond-white.svg');
+		}
+		.icon-sun{
+			background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-sun-white.svg');
+		}
+		.icon-thunder{
+			background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/icon-thunder-white.svg');
+		}
+		.products-icon{
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+.co-branding-glasses{
+	background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/bg.png');
+	@include bg-cover;
+	li{
+		width: 49%;
+		height: 472px;
+		position: relative;
+		&::before{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($color: #fff, $alpha: 0.5);
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		a{
+			z-index: $z-index-1;
+			&:hover{
+				color: $color-secondary;
+			}
+		}
+	}
+	.doubleA-style{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/product-8.png');
+		@include bg-cover;
+	}
+	.youth-style{
+		background-image: url('https://hexschool.github.io/webLayoutTraining1st/week3/product-9.png');
+		@include bg-cover;
+	}
+}
+@include pad{
+	.co-branding-glasses{
+		li{
+			height: 280px;
+		}
+	}
+}
+@include phone{
+	.co-branding-glasses{
+		ul{
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+		li{
+			width: 100%;
+			height: 284px;
+		}
+	}
+}
+.customer-recommend ul{
+	color: #212529;
+	li{
+		width: 24%;
+		border: 1px solid #DEE2E6;
+		.customer-recommend-content-wrap{
+			padding: 14px 16px 15px 16px;
+			p{
+				margin: 7px 0px 10px 0px;
+			}
+		}
+	}
+}
+@include pad{
+	.customer-recommend ul{
+		flex-wrap: wrap;
+		margin-top: 0px;
+		li{
+			width: 48%;
+			margin-top: 28px;
+		}
+	}
+}
+@include phone{
+	.customer-recommend ul{
+		margin-top: 20px;
+		li{
+			width: 100%;
+		}
+	}
+}
+.contact{
+	.form-wrap{
+		width: 66%;
+		margin: 0 auto;
+	}
+	form{
+		input,textarea{
+			display: block;
+			width: 100%;
+			line-height: 1.5;
+			padding: 14px 0px 14px 16px;
+			background: $color-light;
+			border: 1px solid #000000;
+		}
+		input[type= "checkbox"]
+		{
+			display: inline-block;
+			width: auto;
+		}
+		label{
+			display: inline-block;
+		}
+		button{
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+			width: 350px;
+			padding: 16px 0px;
+			line-height: 1.5;
+			border: 0px;
+			cursor: pointer;
+			&:hover{
+				background: $color-secondary;
+			}
+		}
+	}
+}
+@include pad{
+	.contact{
+		form{
+			input,textarea{
+				padding: 8px 0px 8px 12px;
+				font-size: 14px;
+			}
+			button{
+				width: 220px;
+				padding: 8px 0px;
+			}
+		}
+	}
+}
+@include phone{
+	.contact{
+		.form-wrap{
+			width: 100%;
+			margin: 0 auto;
+		}
+		form{
+			button{
+				width: 165px;
+			}
+		}
+	}
+}
